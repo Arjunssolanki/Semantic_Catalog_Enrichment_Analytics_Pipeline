@@ -1,0 +1,15 @@
+# AWS Ingestion Layer
+boto3==1.34.*           # Official AWS SDK for Python to interact with S3
+
+# Data Enrichment & NLP (Simulating Jev AI)
+spacy==3.7.*            # Industrial-strength Natural Language Processing
+nltk==3.8.*             # Natural Language Toolkit for text processing and tokenization
+
+# Advanced Analytics & Pattern Discovery
+mlxtend==0.23.*         # Machine learning library containing the Apriori association engine
+
+# Experiment Tracking & Governance
+mlflow-skinny==2.11.*   # Lightweight version of MLflow to log metrics without heavy UI bloat
+
+# Database Connectivity
+snowflake-connector-python[pandas]==3.7.*  # High-performance engine to stream data to Snowflake
