@@ -1,0 +1,22 @@
+# Local environment variables and secrets
+.env
+secret.json
+*.pem
+
+# Project Virtual Environment
+.venv_semantic_catalog/
+
+# Local Documentation and Exports
+*.docx
+*.pdf
+*.xlsx
+*.pptx
+
+# Python caching and compiler files
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE settings
+.vscode/
+.idea/
