@@ -1,7 +1,6 @@
 # Semantic Catalog Enrichment & Association Analytics Pipeline 🚀
-
-An end-to-end, event-driven **Data Engineering and AI Analytics Ingestion Pipeline** designed to ingest, clean, enrich, and analyze messy, unstructured retail catalog data. This project implements a modern **Medallion Architecture (Bronze -> Silver -> Gold)** using **PySpark** and **Unity Catalog** on Databricks, manages MLOps experiment governance via **MLflow**, and automates cloud data collection using a serverless **AWS ingestion gateway**.
-
+# Project Executive Summary
+The Semantic Catalog Enrichment & Association Analytics Pipeline is an enterprise-grade, event-driven data engineering infrastructure built to process, clean, and analyze highly unstructured, noisy retail catalog datasets. Operating on a modern Medallion Architecture (Bronze -> Silver -> Gold), the pipeline automates the extraction of hidden consumer purchasing behavior from messy raw inputs.The architecture bridges serverless cloud collection with advanced big data analytics. Data is intercepted immediately upon arrival using AWS Lambda, ingested and cataloged securely via Databricks Unity Catalog, structurally cleaned and semantically enriched using PySpark and spaCy NLP (simulating a high-scale Jev AI API tokenization workflow), and programmatically analyzed using a distributed Apriori Association Engine. The entire workflow lifecycle, including feature optimization steps and algorithmic thresholds, is monitored under centralized MLOps governance with MLflow.
 ---
 
 ## 🏛️ Comprehensive Project Architecture & Data Flow
