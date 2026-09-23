@@ -12,9 +12,11 @@ The architecture is built like a smart, automated data factory where each layer 
 
 - **Serverless Interception:** A vendor drops an uncleaned CSV file (`india_retail_sales_dataset.csv`) into the AWS S3 landing bucket. Within **317 milliseconds**, an event trigger wakes up an **AWS Lambda function** to intercept the text stream, perform rapid integrity checks, and log telemetry metadata safely to Amazon CloudWatch.
 - **Bronze Structural Baseline:** The raw CSV lands securely inside Databricks via a managed Unity Catalog **Volume**. A PySpark ingestion script reads the data, enforces strict datatype bounds to catch formatting errors, handles empty operational columns, strips duplicate records, and commits the clean dataset to a permanent **Bronze Delta Table**.
+  ![Data Ingestion Layer](assets/data_ingestion.png)
 - **Silver AI Enrichment:** The pipeline reads from the Bronze table and feeds the unstructured text fields into an optimized **Vectorized Apache Arrow Pandas UDF**. The function loads the open-source **`spaCy` English NLP model** to automatically extract brand names and item descriptors—acting as a free, highly scalable version of the third-party **Jev AI Tokenizer API**. Clean metadata tokens are saved to the **Silver Delta Table** while run details are logged via **MLflow**.
+  ![Silver Layer Enrichment](assets/silver_layer.png)
 - **Gold Business Discovery:** Data is read from the Silver table, reshaped by grouping transaction orders into specific product sub-category vectors, and one-hot encoded into a boolean matrix layout. The **Apriori Algorithm** processes the matrix to extract hidden item purchasing rules (Support, Confidence, Lift) and saves them to a permanent **Gold Delta Table** for downstream enterprise reporting.
-
+![Gold Layer Analytics](assets/gold_layer.png)
 ---
 
 ## 📁 Repository Directory Structure
